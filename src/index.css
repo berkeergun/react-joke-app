@@ -1,13 +1,54 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Nunito', sans-serif;
+  background-image: linear-gradient(to right, #6b4259, #654660, #5e4a65, #574e69, #51516b, #4a546d, #45576d, #40596c, #3a5b6a, #375d67, #365f63, #38605e);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.modal-overlay {
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+
+}
+
+.modal-box {
+  display: block;
+  background: #dfdedc;
+  width: 50%;
+  min-height: 50%;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: fixed;
+}
+
+.modal-checkbox{
+  margin:0px 10px 0px 3px;
 }
