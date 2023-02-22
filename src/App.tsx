@@ -35,7 +35,6 @@ const App = () => {
   const handleChange=(event:React.ChangeEvent<HTMLInputElement>)=>{
     setSearch(event.target.value)
   }
-
   const getJokes= async (event:React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
@@ -60,7 +59,6 @@ const App = () => {
     setSearch("")
 
   } 
-
   const onChangeCategories = (e:React.ChangeEvent<HTMLInputElement>) => {
     if(!categories.includes(e.target.value)){
       let arr = [...categories, e.target.value];
@@ -99,25 +97,25 @@ const App = () => {
 
     if(type === "categories"){
       return (
-        <div style={{display:"flex",flexDirection:"row"}}>
-        <input type="checkbox" value={value} checked={categories.includes(value)} onChange={(e)=>onChangeCategories(e)} />
-        <span className="modal-checkbox">{value}</span>
+        <div style={{display:"flex",flexDirection:"row",width:"130px",border:"0px solid black"}}>
+          <input type="checkbox" value={value} checked={categories.includes(value)} onChange={(e)=>onChangeCategories(e)} />
+          <span className="modal-checkbox">{value}</span>
         </div>
       )
     }
     if(type === "blacklist"){
       return (
-        <div style={{display:"flex",flexDirection:"row"}}>
-        <input type="checkbox" value={value} checked={blacklist.includes(value)} onChange={(e)=>onChangeBlacklist(e)} />
-        <span className="modal-checkbox">{value}</span>
+        <div style={{display:"flex",flexDirection:"row",width:"130px",border:"0px solid black"}}>
+          <input type="checkbox" value={value} checked={blacklist.includes(value)} onChange={(e)=>onChangeBlacklist(e)} />
+          <span className="modal-checkbox">{value}</span>
         </div>
       )
     }
     if(type === "jokeType"){
       return (
-        <div style={{display:"flex",flexDirection:"row"}}>
-        <input type="checkbox" value={value} checked={jokeType.includes(value)} onChange={(e)=>onChangeJokeType(e)} />
-        <span className="modal-checkbox">{value}</span>
+        <div style={{display:"flex",flexDirection:"row",width:"130px",border:"0px solid black"}}>
+          <input type="checkbox" value={value} checked={jokeType.includes(value)} onChange={(e)=>onChangeJokeType(e)} />
+          <span className="modal-checkbox">{value}</span>
         </div>
       )
     }
@@ -150,7 +148,7 @@ const App = () => {
 
               <div style={{margin:"10px",padding:"10px",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
                 <h3>Categories</h3>
-                <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",margin:"5px",flexWrap:"wrap"}}>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"5px",flexWrap:"wrap",border:"0px solid red"}}>
                   {renderCategoryItem("Programming","categories")}
                   {renderCategoryItem("Miscellaneous","categories")}
                   {renderCategoryItem("Dark","categories")}
@@ -164,7 +162,7 @@ const App = () => {
 
               <div style={{margin:"10px",padding:"10px",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
                 <h3>Blacklist</h3>
-                <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",margin:"5px",flexWrap:"wrap"}}>
+                <div style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"5px",flexWrap:"wrap"}}>
                   {renderCategoryItem("nsfw","blacklist")}
                   {renderCategoryItem("religious","blacklist")}
                   {renderCategoryItem("political","blacklist")}
@@ -178,7 +176,7 @@ const App = () => {
 
               <div style={{margin:"10px",padding:"10px",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
                 <h3>Joke Type</h3>
-                <div style={{display:"flex",justifyContent:"flex-start",alignItems:"center",margin:"5px",flexWrap:"wrap"}}>
+                <div style={{display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"center",margin:"5px",flexWrap:"wrap"}}>
                   {renderCategoryItem("single","jokeType")}
                   {renderCategoryItem("twopart","jokeType")}
                   {/* <input type="checkbox" value={"single"} checked={jokeType.includes("single")} onChange={(e)=>onChangeJokeType(e)} />
